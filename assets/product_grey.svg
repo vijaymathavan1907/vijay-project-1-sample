@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="grey-granite-texture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="6" seed="8" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="matrix" in="noise" values="0.5 0 0 0 0.35 0 0.5 0 0 0.36 0 0 0.5 0 0.37 0 0 0 1 0" result="colored"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="20" result="veins"/>
+      <feColorMatrix type="matrix" in="veins" values="0.4 0 0 0 0.28 0 0.4 0 0 0.29 0 0 0.4 0 0.30 0 0 0 0.5 0" result="veinColor"/>
+      <feComposite in="colored" in2="veinColor" operator="arithmetic" k1="0" k2="0.65" k3="0.35" k4="0"/>
+    </filter>
+    <linearGradient id="grey-sheen" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.1)"/>
+      <stop offset="35%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="65%" stop-color="rgba(255,255,255,0.06)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#5A5D60"/>
+  <rect width="100%" height="100%" filter="url(#grey-granite-texture)"/>
+  <rect width="100%" height="100%" fill="url(#grey-sheen)"/>
+</svg>
