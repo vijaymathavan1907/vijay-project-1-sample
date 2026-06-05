@@ -1472,6 +1472,17 @@ ul {
 
 /* Comprehensive Mobile Responsiveness Overrides */
 @media (max-width: 768px) {
+  /* Hero Spacing to avoid overlaying by fixed header on mobile */
+  .hero-section {
+    padding-top: 130px; /* Extra height to ensure hero-badge is pushed down clear of header */
+    align-items: flex-start;
+    height: auto;
+    min-height: 100vh;
+  }
+  .hero-content {
+    margin-top: 1.5rem;
+  }
+
   /* Layout Spacing Adjustments */
   .section-padding {
     padding-top: 4rem;
