@@ -1410,11 +1410,14 @@ ul {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 320px;
+    width: 290px;
     height: 100vh;
-    background-color: var(--color-primary-dark);
-    padding: 8rem 3rem 4rem;
-    box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+    background-color: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 7.5rem 2.5rem 3rem;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.35);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 1005;
     transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     align-items: flex-start;
@@ -1427,18 +1430,25 @@ ul {
   .nav-list {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1.5rem;
     width: 100%;
   }
 
   .nav-link {
     color: var(--color-bg-white);
     font-size: 1.125rem;
+    padding: 0.85rem 0;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .nav-link.active {
+    border-bottom-color: var(--color-accent-gold);
   }
   
   .nav-cta-item {
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
   .nav-cta-item .btn {
     width: 100%;
@@ -1459,3 +1469,115 @@ ul {
     background-color: var(--color-bg-white) !important;
   }
 }
+
+/* Comprehensive Mobile Responsiveness Overrides */
+@media (max-width: 768px) {
+  /* Layout Spacing Adjustments */
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .grid-container {
+    gap: 2rem;
+  }
+  
+  /* Section Headers spacing overrides */
+  .section-subtitle-text {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Form Wrappers container spacing overrides */
+  .form-wrapper {
+    padding: 2.5rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  /* SVG Map Legibility Enhancements */
+  .global-map-svg text {
+    font-size: 16px !important;
+  }
+  .global-map-svg .main-dest-node text {
+    font-size: 18px !important;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Brand Logo Header Fit */
+  .brand-logo {
+    font-size: 1.15rem;
+    letter-spacing: 1.5px;
+  }
+  .brand-logo svg {
+    width: 24px;
+    height: 24px;
+  }
+  .header-container {
+    padding: 0 1.25rem;
+  }
+
+  /* Horizontal Scrollable Product Category Tabs */
+  .tab-buttons {
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 1.25rem;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none; /* Hide standard Firefox scrollbar */
+  }
+  .tab-buttons::-webkit-scrollbar {
+    display: none; /* Hide Chrome/Safari scrollbars */
+  }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 0.75rem 0;
+    font-size: 0.8125rem;
+  }
+
+  /* Compact Product Cards specs table */
+  .product-info {
+    padding: 2rem 1.25rem;
+  }
+  .product-title {
+    font-size: 1.75rem;
+  }
+  .specs-table th, .specs-table td {
+    padding: 0.6rem 0;
+    font-size: 0.8125rem;
+  }
+  
+  /* Compact Modal Overlay padding */
+  .modal-content {
+    padding: 2.5rem 1.25rem;
+  }
+  .modal-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero Action Buttons Stack */
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* SVG Map Legibility Enhancements for tiny viewports */
+  .global-map-svg text {
+    font-size: 18px !important;
+  }
+  .global-map-svg .main-dest-node text {
+    font-size: 20px !important;
+  }
+}
+
